@@ -65,10 +65,12 @@
     // If all validation checks pass, submit the form
     alert("Form submitted successfully!");
 
-    var tip = amount * (rating / 10) * (1 + budget / 100);
+    var tip = amount * (rating / 10) * 0.2;
+
 
 // Create a new <p> element
 var paragraph = document.createElement("p");
+alert(`The estimated tip cost is $${tip.toFixed(2)}.`);
 
 // Set the text content of the <p> element
 paragraph.textContent = `The estimated tip cost is $${tip.toFixed(2)}.`;
