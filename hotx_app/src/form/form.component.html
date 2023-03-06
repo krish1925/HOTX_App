@@ -1,34 +1,29 @@
-<h1>Input Restaraunt Details</h1>
-<form>
-    <div class="form-group">
-      <label for="restname">Restuarant Name</label>
-      <input type="text" class="form-control" id="restname" placeholder="Enter Restaurant Name">
-    </div>
-    <div class="form-group">
-        <label for="Zip">Restaurant Zip Code</label>
-        <input type="text" class="form-control" id="Zip" placeholder="Enter Zipcode">
-      </div>
-    <div class="form-group">
-      <label for="amount">Bill amount(in USD$)</label>
-      <input type="number" class="form-control" id="amount" placeholder="Enter your Bill amount">
-    </div>
-    <div class="form-group">
-        <label for="budget">Budget</label>
-        <input type="number" class="form-control" id="budget" placeholder="Enter your Budget">
-    </div>
-    <div class="form-group">
-        <label for="rating">Personal Experience?: </label>
-        <input type="number" class="form-control" id="rating" placeholder="Pick a value from 1-10">
-    </div>
-    <div style="display: flex; justify-content: center;">
-    
-        <button type="submit" class="btn btn-primary" onclick="Submit()">Submit</button>
-    </div>
-    </form>
 
-<script>
-    submit(){
-        
-    }
-</script>
-  
+<h1>Input Restaurant Details</h1>
+
+
+<form onsubmit="return submitt()">
+  <div class="form-group">
+    <label for="restname">Restaurant Name</label>
+    <input type="text" class="form-control" id="restname" placeholder="Enter Restaurant Name">
+  </div>
+  <div class="form-group">
+    <label for="zip">Restaurant Zip Code</label>
+    <input type="number" class="form-control" id="zip" placeholder="Enter Zipcode">
+  </div>
+  <div class="form-group">
+    <label for="amount">Bill amount (in USD$)</label>
+    <input type="number" class="form-control" id="amount" placeholder="Enter your Bill amount">
+  </div>
+  <div class="form-group">
+    <label for="budget">Budget</label>
+    <input type="number" class="form-control" id="budget" placeholder="Enter your Budget">
+  </div>
+  <div class="form-group">
+    <label for="rating">Personal Experience?</label>
+    <input type="number" class="form-control" id="rating" placeholder="Pick a value from 1-10">
+  </div>
+  <div style="display: flex; justify-content: center;">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>

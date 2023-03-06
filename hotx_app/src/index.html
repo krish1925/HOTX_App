@@ -9,6 +9,78 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  // (function() {
+  //   'use strict';
+  //   alert("KRISH");
+  //   window.addEventListener('load', function() {
+  //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  //     var forms = document.getElementsByClassName('needs-validation');
+  //     // Loop over them and prevent submission
+  //     var validation = Array.prototype.filter.call(forms, function(form) {
+  //       form.addEventListener('submit', function(event) {
+  //         if (form.checkValidity() === false) {
+  //           event.preventDefault();
+  //           event.stopPropagation();
+  //         }
+  //         form.classList.add('was-validated');
+  //       }, false);
+  //     });
+  //   }, false);
+  // })();
+
+  function submitt() {
+    const restname = document.getElementById("restname").value.trim();
+    const zipcode = document.getElementById("zip").value.trim();
+    const amount = document.getElementById("amount").value.trim();
+    const budget = document.getElementById("budget").value.trim();
+    const rating = document.getElementById("rating").value.trim();
+    
+    // Check if all required fields are filled in
+    if (restname === "" || zipcode === "" || amount === "" || budget === "" || rating === "") {
+      alert("Please fill in all the required fields.");
+      return false;
+    }
+
+    // Check if the zip code is a valid format
+    if (!/^\d{5}$/.test(zipcode)) {
+      alert("Please enter a valid zip code.");
+      return false;
+    }
+
+    // Check if the bill amount and budget are numbers
+    if (isNaN(amount) || isNaN(budget)) {
+      alert("Please enter a valid number for the bill amount and budget.");
+      return false;
+    }
+
+    // Check if the rating is a number between 1 and 10
+    if (isNaN(rating) || rating < 1 || rating > 10) {
+      alert("Please enter a valid rating between 1 and 10.");
+      return false;
+    }
+
+    // If all validation checks pass, submit the form
+    alert("Form submitted successfully!");
+
+    var tip = amount * (rating / 10) * (1 + budget / 100);
+
+// Create a new <p> element
+var paragraph = document.createElement("p");
+
+// Set the text content of the <p> element
+paragraph.textContent = `The estimated tip cost is $${tip.toFixed(2)}.`;
+
+// Append the <p> element to the document body
+document.body.appendChild(paragraph);
+
+// If all validation checks pass, submit the form
+
+return true;
+  }
+</script>
 </head>
 <body>
   <app-root></app-root>
